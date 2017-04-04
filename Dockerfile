@@ -8,13 +8,11 @@ ENV PATH $PATH:/usr/local/go/bin
 
 USER root
 
-RUN yum install git -y
-
 RUN yum install epel-release -y
 
 RUN yum groupinstall 'Development Tools' -y
 
-RUN yum install openssl-devel zlib-devel python wget -y
+RUN yum install git which openssl-devel zlib-devel python wget -y
 
 RUN mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
 
